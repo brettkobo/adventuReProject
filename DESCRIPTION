@@ -1,11 +1,11 @@
 Package: adventuReProject
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Wrapper for API from Adventure Projects
 Version: 0.1.0
 Author: Brett Kobold
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Maintainer: The package maintainer <brettkob@gmail.com>
+Description: Includes functions to retrieve data from any of the Adventure Projects. This include MTB Project, Hiking Project, Trail Running Project, Powder Project, & Mountian Project. It also includes a few helper functions that allow querying all data points in the trails and routes section.
+License: MIT License
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
