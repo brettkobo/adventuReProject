@@ -13,7 +13,7 @@ project_match_trails <- function(project_name) {
 }
 
 project_match_mountian <- function(project_name) {
-  if(!project_name %in% c("mountainn")) {
+  if(!project_name %in% c("mountain")) {
     stop("Incorrect project name. Try mountain")
   }
 }

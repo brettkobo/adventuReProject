@@ -28,7 +28,7 @@ get_trails(project = NULL, key = NULL, lat = NULL, lon = NULL,
 \item{min_stars}{min star rating, 0-4. Default: 0.}
 }
 \value{
-A data.frame containing all of the trails that match the query parameters. Data.frame will have URL used when calling API in the attributes. Can be retrieved with attr(data, "api_url").
+A data.frame containing all of the trails that match the query parameters. data.frame will have URL used when calling API in the attributes. Can be retrieved with attr(data, "api_url").
 }
 \description{
 Retrieves a JSON of trails based on the the longitude and latitude.

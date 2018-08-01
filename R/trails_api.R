@@ -19,7 +19,7 @@ library(tidyverse)
 #' @param min_length min trail length, in miles. Default: 0 (no minimum).
 #' @param min_stars min star rating, 0-4. Default: 0.
 #'
-#' @return A data.frame containing all of the trails that match the query parameters. Data.frame will have URL used when calling API in the attributes. Can be retrieved with attr(data, "api_url").
+#' @return A data.frame containing all of the trails that match the query parameters. data.frame will have URL used when calling API in the attributes. Can be retrieved with attr(data, "api_url").
 #'
 #' @examples
 #' \dontrun{
@@ -29,8 +29,9 @@ library(tidyverse)
 #' @export
 get_trails <- function(project = NULL, key = NULL, lat = NULL, lon = NULL, max_distance = NULL, max_results = NULL, sort = NULL, min_length = NULL, min_stars = NULL) {
 
-  base_url <- paste0("https://www.", project, "project.com")
+  project_match_trails(project)
 
+  base_url <- paste0("https://www.", project, "project.com")
   required_params <- list(key = key,
                             lat = lat,
                             lon = lon)
@@ -71,6 +72,8 @@ get_trails <- function(project = NULL, key = NULL, lat = NULL, lon = NULL, max_d
 #'
 #' @export
 get_trails_by_id <- function(project = NULL, key = NULL, ids = NULL) {
+
+  project_match_trails(project)
   base_url <- paste0("https://www.", project, "project.com")
 
   required_params <- list(key = key,
@@ -98,6 +101,8 @@ get_trails_by_id <- function(project = NULL, key = NULL, ids = NULL) {
 #'
 #' @export
 get_condtions <- function(project = NULL, key = NULL, ids = NULL) {
+
+  project_match_trails(project)
   base_url <- paste0("https://www.", project, "project.com")
 
   required_params <- list(key = key,
@@ -121,8 +126,9 @@ get_condtions <- function(project = NULL, key = NULL, ids = NULL) {
 #' @inheritParams get_condtions
 #' @param user_id the ID of the user to return
 #' @param email the email address of the user to return
+#' @param start_pos the starting index of the list to return. Defaults to 0.
 #'
-#' @details Either \code{user_id} or \code{email} is required, but not both.
+#' @details Either user_id or email is required, but not both.
 #' @return A data.frame of a users to-dos.
 #'
 #' @examples
@@ -132,6 +138,8 @@ get_condtions <- function(project = NULL, key = NULL, ids = NULL) {
 #'
 #' @export
 get_to_dos <- function(project = NULL, key = NULL, user_id = NULL, email = NULL, start_pos = NULL) {
+
+  project_match_trails(project)
   base_url <- paste0("https://www.", project, "project.com")
 
   required_params <- if(is.null(user_id))
